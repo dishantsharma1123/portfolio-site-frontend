@@ -199,12 +199,12 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Logo to="/portfolio-site-frontend/">My Portfolio</Logo>
+        <Logo to="/">My Portfolio</Logo>
         <Nav>
-          <NavLink to="/portfolio-site-frontend/">Home</NavLink>
-          <NavLink to="/portfolio-site-frontend/about/">About</NavLink>
-          <NavLink to="/portfolio-site-frontend/projects/">Projects</NavLink>
-          <NavLink to="/portfolio-site-frontend/contact/">Contact</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </Nav>
         <HamburgerIcon onClick={toggleMenu} id="hamburger-icon">
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -215,28 +215,16 @@ const Header = () => {
         <CloseButton onClick={toggleMenu}>
           <FaTimes size={24} />
         </CloseButton>
-        <MenuItem
-          to="/portfolio-site-frontend/"
-          onClick={() => setIsOpen(false)}
-        >
+        <MenuItem to="/" onClick={() => setIsOpen(false)}>
           Home
         </MenuItem>
-        <MenuItem
-          to="/portfolio-site-frontend/about/"
-          onClick={() => setIsOpen(false)}
-        >
+        <MenuItem to="/about" onClick={() => setIsOpen(false)}>
           About
         </MenuItem>
-        <MenuItem
-          to="/portfolio-site-frontend/projects/"
-          onClick={() => setIsOpen(false)}
-        >
+        <MenuItem to="/projects" onClick={() => setIsOpen(false)}>
           Projects
         </MenuItem>
-        <MenuItem
-          to="/portfolio-site-frontend/contact/"
-          onClick={() => setIsOpen(false)}
-        >
+        <MenuItem to="/contact" onClick={() => setIsOpen(false)}>
           Contact
         </MenuItem>
       </Menu>

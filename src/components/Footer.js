@@ -59,7 +59,6 @@ const FooterLinks = styled.div`
 
 // Individual link items
 const FooterLink = styled(Link)`
-  // Use Link instead of a
   color: ${colors.text};
   text-decoration: none;
   margin: 5px 0;
@@ -99,7 +98,6 @@ const Branding = styled.div`
 
 // Footer branding/logo
 const Logo = styled(Link)`
-  // Use Link instead of a
   font-size: 1.5rem;
   font-weight: bold;
   color: ${colors.text};
@@ -136,7 +134,7 @@ const Footer = () => {
       <FooterWrapper>
         {/* Branding Section */}
         <Branding>
-          <Logo to="/">My Portfolio</Logo> {/* Use Link with to prop */}
+          <Logo to="/">My Portfolio</Logo>
         </Branding>
 
         {/* Navigation Links */}
