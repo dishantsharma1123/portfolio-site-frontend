@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/dishantsharma1123.github.io/portfolio-site-frontend/static/css/main.bdaf1c43.css",
-    "main.js": "/dishantsharma1123.github.io/portfolio-site-frontend/static/js/main.9fff2fd1.js",
-    "static/media/Yes_Check_Circle.svg.png": "/dishantsharma1123.github.io/portfolio-site-frontend/static/media/Yes_Check_Circle.svg.cb2898f1fccd09d94d67.png",
-    "static/media/slick.svg": "/dishantsharma1123.github.io/portfolio-site-frontend/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/dishantsharma1123.github.io/portfolio-site-frontend/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/dishantsharma1123.github.io/portfolio-site-frontend/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/dishantsharma1123.github.io/portfolio-site-frontend/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "/dishantsharma1123.github.io/portfolio-site-frontend/index.html",
-    "main.bdaf1c43.css.map": "/dishantsharma1123.github.io/portfolio-site-frontend/static/css/main.bdaf1c43.css.map",
-    "main.9fff2fd1.js.map": "/dishantsharma1123.github.io/portfolio-site-frontend/static/js/main.9fff2fd1.js.map"
+    "main.css": "/portfolio-site-frontend/static/css/main.536f8605.css",
+    "main.js": "/portfolio-site-frontend/static/js/main.361bf12e.js",
+    "static/media/Yes_Check_Circle.svg.png": "/portfolio-site-frontend/static/media/Yes_Check_Circle.svg.cb2898f1fccd09d94d67.png",
+    "static/media/slick.svg": "/portfolio-site-frontend/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/portfolio-site-frontend/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/portfolio-site-frontend/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/portfolio-site-frontend/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/portfolio-site-frontend/index.html",
+    "main.536f8605.css.map": "/portfolio-site-frontend/static/css/main.536f8605.css.map",
+    "main.361bf12e.js.map": "/portfolio-site-frontend/static/js/main.361bf12e.js.map"
   },
   "entrypoints": [
-    "static/css/main.bdaf1c43.css",
-    "static/js/main.9fff2fd1.js"
+    "static/css/main.536f8605.css",
+    "static/js/main.361bf12e.js"
   ]
 }
