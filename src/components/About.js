@@ -32,6 +32,7 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     padding: 30px 10px;
@@ -52,6 +53,7 @@ const HeaderContainer = styled.div`
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
+  overflow: hidden;
 
   &:before {
     content: "";
