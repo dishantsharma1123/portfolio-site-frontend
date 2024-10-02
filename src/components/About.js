@@ -32,6 +32,10 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 30px 10px;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -65,12 +69,20 @@ const HeaderTitle = styled.h1`
   font-size: 3rem;
   animation: ${fadeIn} 1s ease forwards;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const HeaderSubtitle = styled.h2`
   font-size: 1.5rem;
   animation: ${fadeIn} 1.2s ease forwards;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Description = styled.p`
@@ -81,6 +93,10 @@ const Description = styled.p`
   margin: 20px 0;
   animation: ${fadeIn} 0.8s ease forwards;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const SkillsSection = styled.div`
@@ -105,6 +121,10 @@ const SkillCard = styled.div`
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
   }
 `;
 
@@ -152,6 +172,15 @@ const Section = styled.div`
     margin: 15px 0;
     color: #3182ce;
     font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
 `;
 

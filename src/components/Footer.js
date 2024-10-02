@@ -39,7 +39,7 @@ const FooterWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
@@ -52,11 +52,8 @@ const FooterWrapper = styled.div`
 const FooterLinks = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    align-items: center;
-  }
 `;
 
 // Individual link items
@@ -66,6 +63,7 @@ const FooterLink = styled.a`
   margin: 5px 0;
   font-size: 0.95rem;
   transition: color 0.3s ease;
+  text-align: center;
 
   &:hover {
     color: ${colors.hoverAccent};
