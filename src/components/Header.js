@@ -201,7 +201,7 @@ const Header = () => {
       <HeaderContainer>
         <Logo to="/portfolio-site-frontend/">My Portfolio</Logo>
         <Nav>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/portfolio-site-frontend/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/contact">Contact</NavLink>

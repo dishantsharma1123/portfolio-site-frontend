@@ -122,7 +122,7 @@ const FooterBottom = styled.div`
 
 // Example navigation links
 const navLinks = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "/portfolio-site-frontend/" },
   { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
