@@ -33,6 +33,7 @@ const AboutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 
   @media (max-width: 768px) {
     padding: 30px 10px;
@@ -98,6 +99,7 @@ const Description = styled.p`
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
+    margin: 10px;
   }
 `;
 
@@ -107,6 +109,7 @@ const SkillsSection = styled.div`
   justify-content: center;
   max-width: 1200px;
   margin-top: 40px;
+  box-sizing: border-box;
 `;
 
 const SkillCard = styled.div`
@@ -115,7 +118,7 @@ const SkillCard = styled.div`
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   margin: 15px;
-  width: 250px;
+  width: calc(33.33% - 30px);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: ${slideIn} 0.5s ease forwards;
@@ -159,6 +162,7 @@ const Section = styled.div`
   margin-top: 60px;
   animation: ${fadeIn} 1s ease forwards;
   text-align: center;
+  box-sizing: border-box;
 
   h3 {
     font-size: 2rem;
