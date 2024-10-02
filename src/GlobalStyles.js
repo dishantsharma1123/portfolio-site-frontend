@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const GlobalStyles = createGlobalStyle`
+  /* Reset and base styles */
   * {
     margin: 0;
     padding: 0;
@@ -16,18 +17,34 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
-    /* General global styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
     overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h1, h2, h3 {
+    margin: 20px 0;
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px; /* Decrease base font size on smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    html {
+      font-size: 12px; /* Further decrease font size on very small screens */
+    }
   }
 
   /* Slick slider styles */
@@ -55,33 +72,6 @@ const GlobalStyles = createGlobalStyle`
     padding: 20px;
     text-align: center;
     transition: all 0.5s ease-in-out;
-  }
-
-  body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  h1, h2, h3 {
-    margin: 20px 0;
-  }
-
-  /* Responsive Typography */
-  @media (max-width: 768px) {
-    html {
-      font-size: 14px; /* Decrease base font size on small screens */
-    }
-  }
-
-  @media (max-width: 480px) {
-    html {
-      font-size: 12px; /* Further decrease on very small screens */
-    }
   }
 `;
 

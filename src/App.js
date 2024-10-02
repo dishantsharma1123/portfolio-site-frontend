@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useEffect } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
 import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -9,14 +10,15 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import GlobalStyles from "./GlobalStyles";
 import MainContent from "./components/MainContent";
-import styled from "styled-components";
 
+// Container for the entire application, ensuring it takes the full viewport height
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 `;
 
+// Content area that grows to fill available space between header and footer
 const Content = styled.div`
   flex: 1;
   padding: 20px;
@@ -26,7 +28,6 @@ const App = () => {
   useEffect(() => {
     const handleContextMenu = (e) => e.preventDefault();
     document.addEventListener("contextmenu", handleContextMenu);
-
     return () => {
       document.removeEventListener("contextmenu", handleContextMenu);
     };

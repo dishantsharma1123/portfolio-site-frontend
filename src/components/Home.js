@@ -59,6 +59,12 @@ const HeroSection = styled.section`
       font-size: 2.5rem;
     }
   }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 const FeaturesSection = styled.section`
@@ -107,6 +113,20 @@ const FeatureCard = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
+
+  @media (max-width: 480px) {
+    svg {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 const CTASection = styled.section`
@@ -140,6 +160,17 @@ const CTASection = styled.section`
     &:hover {
       background: #3182ce; /* Slightly darker blue on hover */
       transform: translateY(-5px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 30px;
     }
   }
 `;
@@ -187,6 +218,16 @@ const StatsCard = styled.div`
 
   p {
     color: #666;
+  }
+
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
   }
 `;
 

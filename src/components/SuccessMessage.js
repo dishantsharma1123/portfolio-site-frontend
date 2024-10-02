@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import TickImageSrc from "../assets/Yes_Check_Circle.svg.png";
 
+// Define the fade-in animation
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -12,6 +13,7 @@ const fadeIn = keyframes`
   }
 `;
 
+// Overlay for the success message
 const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -25,6 +27,7 @@ const Overlay = styled.div`
   z-index: 1000;
 `;
 
+// Container for the success message
 const SuccessContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,12 +49,14 @@ const SuccessContainer = styled.div`
   }
 `;
 
+// Image for the success tick
 const TickImage = styled.img`
   width: 70px;
   height: auto;
   margin-bottom: 10px;
 `;
 
+// Text for the success message
 const SuccessMessageText = styled.p`
   font-size: 1.2rem;
   color: #4caf50;
@@ -59,6 +64,7 @@ const SuccessMessageText = styled.p`
   margin: 0;
 `;
 
+// Text for the countdown timer
 const TimerText = styled.p`
   font-size: 1rem;
   color: #4caf50;
@@ -66,6 +72,7 @@ const TimerText = styled.p`
   margin-top: 10px;
 `;
 
+// SuccessMessage component
 const SuccessMessage = ({ onClose }) => {
   const [secondsLeft, setSecondsLeft] = useState(4);
 

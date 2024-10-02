@@ -32,7 +32,7 @@ const SectionHeading = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
   color: #61dafb; /* Header color */
-  animation: ${fadeIn} 1s ease forwards; // Add animation here
+  animation: ${fadeIn} 1s ease forwards;
 `;
 
 // Project Card Container
@@ -116,7 +116,7 @@ const IntroductionSection = styled.div`
   font-size: 1.2rem;
   line-height: 1.5;
   color: white;
-  animation: ${fadeIn} 1s ease forwards; // Add animation here
+  animation: ${fadeIn} 1s ease forwards;
 `;
 
 // New Section: Technology Overview

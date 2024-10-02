@@ -165,8 +165,7 @@ const Contact = () => {
         />
         <SubmitButton type="submit">Send Message</SubmitButton>
       </Form>
-      {isSuccess && <SuccessMessage onClose={handleCloseSuccessMessage} />}{" "}
-      {/* Render success message if isSuccess is true */}
+      {isSuccess && <SuccessMessage onClose={handleCloseSuccessMessage} />}
     </ContactContainer>
   );
 };
