@@ -199,7 +199,7 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Logo to="/">My Portfolio</Logo>
+        <Logo to="/portfolio-site-frontend/">My Portfolio</Logo>
         <Nav>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
@@ -215,7 +215,10 @@ const Header = () => {
         <CloseButton onClick={toggleMenu}>
           <FaTimes size={24} />
         </CloseButton>
-        <MenuItem to="/" onClick={() => setIsOpen(false)}>
+        <MenuItem
+          to="/portfolio-site-frontend/"
+          onClick={() => setIsOpen(false)}
+        >
           Home
         </MenuItem>
         <MenuItem to="/about" onClick={() => setIsOpen(false)}>

@@ -135,7 +135,7 @@ const Footer = () => {
       <FooterWrapper>
         {/* Branding Section */}
         <Branding>
-          <Logo href="/">My Portfolio</Logo>
+          <Logo href="/portfolio-site-frontend/">My Portfolio</Logo>
         </Branding>
 
         {/* Navigation Links */}
