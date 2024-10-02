@@ -202,9 +202,9 @@ const Header = () => {
         <Logo to="/portfolio-site-frontend/">My Portfolio</Logo>
         <Nav>
           <NavLink to="/portfolio-site-frontend/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/portfolio-site-frontend/about/">About</NavLink>
+          <NavLink to="/portfolio-site-frontend/projects/">Projects</NavLink>
+          <NavLink to="/portfolio-site-frontend/contact/">Contact</NavLink>
         </Nav>
         <HamburgerIcon onClick={toggleMenu} id="hamburger-icon">
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -221,13 +221,22 @@ const Header = () => {
         >
           Home
         </MenuItem>
-        <MenuItem to="/about" onClick={() => setIsOpen(false)}>
+        <MenuItem
+          to="/portfolio-site-frontend/about/"
+          onClick={() => setIsOpen(false)}
+        >
           About
         </MenuItem>
-        <MenuItem to="/projects" onClick={() => setIsOpen(false)}>
+        <MenuItem
+          to="/portfolio-site-frontend/projects/"
+          onClick={() => setIsOpen(false)}
+        >
           Projects
         </MenuItem>
-        <MenuItem to="/contact" onClick={() => setIsOpen(false)}>
+        <MenuItem
+          to="/portfolio-site-frontend/contact/"
+          onClick={() => setIsOpen(false)}
+        >
           Contact
         </MenuItem>
       </Menu>

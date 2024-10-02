@@ -121,9 +121,9 @@ const FooterBottom = styled.div`
 // Example navigation links
 const navLinks = [
   { name: "Home", href: "/portfolio-site-frontend/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "/portfolio-site-frontend/about/" },
+  { name: "Projects", href: "/portfolio-site-frontend/projects/" },
+  { name: "Contact", href: "/portfolio-site-frontend/contact/" },
 ];
 
 // Footer component

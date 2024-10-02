@@ -41,9 +41,18 @@ const App = () => {
           <Content>
             <Routes>
               <Route path="/portfolio-site-frontend/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route
+                path="/portfolio-site-frontend/about/"
+                element={<About />}
+              />
+              <Route
+                path="/portfolio-site-frontend/projects/"
+                element={<Projects />}
+              />
+              <Route
+                path="/portfolio-site-frontend/contact/"
+                element={<Contact />}
+              />
             </Routes>
           </Content>
         </MainContent>
