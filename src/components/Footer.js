@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 // Define a color palette for consistency
 const colors = {
@@ -57,7 +58,8 @@ const FooterLinks = styled.div`
 `;
 
 // Individual link items
-const FooterLink = styled.a`
+const FooterLink = styled(Link)`
+  // Use Link instead of a
   color: ${colors.text};
   text-decoration: none;
   margin: 5px 0;
@@ -96,7 +98,8 @@ const Branding = styled.div`
 `;
 
 // Footer branding/logo
-const Logo = styled.a`
+const Logo = styled(Link)`
+  // Use Link instead of a
   font-size: 1.5rem;
   font-weight: bold;
   color: ${colors.text};
@@ -120,10 +123,10 @@ const FooterBottom = styled.div`
 
 // Example navigation links
 const navLinks = [
-  { name: "Home", href: "/portfolio-site-frontend/" },
-  { name: "About", href: "/portfolio-site-frontend/about/" },
-  { name: "Projects", href: "/portfolio-site-frontend/projects/" },
-  { name: "Contact", href: "/portfolio-site-frontend/contact/" },
+  { name: "Home", href: "/" }, // Use relative paths for HashRouter
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
 ];
 
 // Footer component
@@ -133,13 +136,13 @@ const Footer = () => {
       <FooterWrapper>
         {/* Branding Section */}
         <Branding>
-          <Logo href="/portfolio-site-frontend/">My Portfolio</Logo>
+          <Logo to="/">My Portfolio</Logo> {/* Use Link with to prop */}
         </Branding>
 
         {/* Navigation Links */}
         <FooterLinks>
           {navLinks.map((link) => (
-            <FooterLink key={link.name} href={link.href}>
+            <FooterLink key={link.name} to={link.href}>
               {link.name}
             </FooterLink>
           ))}
