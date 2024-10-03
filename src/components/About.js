@@ -14,17 +14,6 @@ const fadeIn = keyframes`
   }
 `;
 
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
-
 const AboutContainer = styled.div`
   width: 100%;
   padding: 60px 20px;
@@ -133,7 +122,6 @@ const SkillCard = styled.div`
   width: calc(33.33% - 30px);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: ${slideIn} 0.5s ease forwards;
 
   &:hover {
     transform: translateY(-10px);
