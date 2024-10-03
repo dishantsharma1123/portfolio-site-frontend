@@ -1,41 +1,25 @@
 // src/components/About.js
 import React from "react";
-import styled, { keyframes } from "styled-components";
-
-// Keyframes for animations
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import styled from "styled-components";
 
 const AboutContainer = styled.div`
   width: 100%;
-  padding: 60px 20px;
+  padding: 40px 20px;
   background: #f8f9fa;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-
-  @media (max-width: 768px) {
-    padding: 30px 10px;
-  }
 `;
 
 const HeaderContainer = styled.div`
   width: 100%;
+  max-width: 800px;
   height: 400px;
   background-image: url("https://images.unsplash.com/photo-1723561246850-f58894fc3f64?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: center;
-  position: relative;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,64 +27,46 @@ const HeaderContainer = styled.div`
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
-  overflow: hidden;
+  position: relative;
+`;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 `;
 
 const HeaderTitle = styled.h1`
-  font-size: 3rem;
-  animation: ${fadeIn} 1s ease forwards;
+  font-size: 2.5rem;
   z-index: 2;
-
+  margin: 0;
   @media (max-width: 768px) {
     font-size: 2rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.5rem;
   }
 `;
 
 const HeaderSubtitle = styled.h2`
-  font-size: 1.5rem;
-  animation: ${fadeIn} 1.2s ease forwards;
+  font-size: 1.2rem;
   z-index: 2;
-
+  margin: 10px 0 0;
   @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-
-  @media (max-width: 480px) {
     font-size: 1rem;
   }
 `;
 
 const Description = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #555;
   max-width: 800px;
   text-align: center;
   margin: 20px 0;
-  animation: ${fadeIn} 0.8s ease forwards;
-  z-index: 2;
-
   @media (max-width: 768px) {
-    font-size: 1.2rem;
-    margin: 10px;
-  }
-
-  @media (max-width: 480px) {
     font-size: 1rem;
+    padding: 0 10px;
   }
 `;
 
@@ -110,7 +76,6 @@ const SkillsSection = styled.div`
   justify-content: center;
   max-width: 1200px;
   margin-top: 40px;
-  box-sizing: border-box;
 `;
 
 const SkillCard = styled.div`
@@ -170,19 +135,17 @@ const SkillDescription = styled.p`
 
 const Section = styled.div`
   width: 100%;
-  max-width: 1200px;
-  margin-top: 60px;
-  animation: ${fadeIn} 1s ease forwards;
+  max-width: 800px;
+  margin-top: 40px;
   text-align: center;
-  box-sizing: border-box;
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #333;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #555;
   }
 
@@ -197,15 +160,6 @@ const Section = styled.div`
       font-size: 1.5rem;
     }
     p {
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h3 {
-      font-size: 1.3rem;
-    }
-    p {
       font-size: 0.9rem;
     }
   }
@@ -215,6 +169,7 @@ const About = () => {
   return (
     <AboutContainer>
       <HeaderContainer>
+        <Overlay />
         <HeaderTitle>About Me</HeaderTitle>
         <HeaderSubtitle>Passionate Software Developer</HeaderSubtitle>
       </HeaderContainer>
