@@ -11,6 +11,11 @@ const MainContent = styled.main`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @media (max-width: 480px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 `;
 
 export default MainContent;

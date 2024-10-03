@@ -32,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
 
   h1, h2, h3 {
     margin: 20px 0;
+    line-height: 1.2; /* Improve readability */
   }
 
   /* Responsive Typography */

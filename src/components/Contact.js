@@ -6,22 +6,22 @@ import SuccessMessage from "./SuccessMessage"; // Import the SuccessMessage comp
 const ContactContainer = styled.section`
   padding: 50px 20px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 40px auto;
   text-align: center;
-  background: #f9f9f9; /* Lighter background */
-  border-radius: 10px;
+  background: #f9f9f9;
+  border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 `;
 
 const SectionHeading = styled.h2`
   font-size: 2.5rem;
-  color: #2c3e50; /* Darker text color for visibility */
+  color: #2c3e50;
   margin-bottom: 20px;
 `;
 
 const SectionText = styled.p`
   font-size: 1.1rem;
-  color: #34495e; /* Slightly lighter than dark blue */
+  color: #34495e;
   margin-bottom: 30px;
 `;
 
@@ -38,12 +38,12 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  color: #34495e; /* Dark text color for input */
-  background: #fff; /* White background for input */
+  color: #34495e;
+  background: #fff;
 
   &:focus {
-    border-color: #61dafb; /* Focus color */
-    outline: none; /* Remove default outline */
+    border-color: #61dafb;
+    outline: none;
   }
 `;
 
@@ -54,12 +54,13 @@ const TextArea = styled.textarea`
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  color: #34495e; /* Dark text color for textarea */
-  background: #fff; /* White background for textarea */
+  color: #34495e;
+  background: #fff;
+  resize: none; /* Prevent resizing */
 
   &:focus {
-    border-color: #61dafb; /* Focus color */
-    outline: none; /* Remove default outline */
+    border-color: #61dafb;
+    outline: none;
   }
 `;
 
@@ -68,14 +69,14 @@ const SubmitButton = styled.button`
   margin-top: 20px;
   border: none;
   border-radius: 5px;
-  background: #2c3e50; /* Button color */
+  background: #2c3e50;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s;
 
   &:hover {
-    background: #34495e; /* Darker shade on hover */
+    background: #34495e;
   }
 `;
 
@@ -86,7 +87,7 @@ const Contact = () => {
     message: "",
     subject: "",
   });
-  const [isSuccess, setIsSuccess] = useState(false); // State to manage success message visibility
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -95,7 +96,6 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting form with data:", formData);
     try {
       const response = await fetch(
         "https://alert-perfection-production.up.railway.app/send",
@@ -109,8 +109,8 @@ const Contact = () => {
       );
 
       if (response.ok) {
-        setIsSuccess(true); // Show success message
-        setFormData({ name: "", email: "", message: "", subject: "" }); // Reset form
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", message: "", subject: "" });
       } else {
         alert("Failed to send message");
       }
@@ -121,7 +121,7 @@ const Contact = () => {
   };
 
   const handleCloseSuccessMessage = () => {
-    setIsSuccess(false); // Hide success message
+    setIsSuccess(false);
   };
 
   return (
@@ -148,7 +148,7 @@ const Contact = () => {
           required
         />
         <Input
-          type="subject"
+          type="text"
           name="subject"
           placeholder="Subject"
           value={formData.subject}

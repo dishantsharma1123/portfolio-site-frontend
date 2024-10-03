@@ -33,6 +33,14 @@ const SectionHeading = styled.h1`
   margin-bottom: 2rem;
   color: #61dafb; /* Header color */
   animation: ${fadeIn} 1s ease forwards;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 // Project Card Container
@@ -56,6 +64,11 @@ const ProjectCard = styled.div`
   &:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Keep hover shadow effect */
   }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
 `;
 
 // Image Container
@@ -76,6 +89,10 @@ const ProjectTitle = styled.h3`
   font-size: 1.5rem;
   color: white;
   margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+  }
 `;
 
 // Technologies List
@@ -84,6 +101,10 @@ const Technologies = styled.p`
   color: #dcdcdc; /* Lighter gray for better contrast */
   margin-bottom: 30px;
   text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 // Icons Container
@@ -117,6 +138,10 @@ const IntroductionSection = styled.div`
   line-height: 1.5;
   color: white;
   animation: ${fadeIn} 1s ease forwards;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 // New Section: Technology Overview
@@ -142,6 +167,10 @@ const TechBox = styled.div`
   padding: 20px;
   border-radius: 8px;
   color: white;
+
+  @media (max-width: 480px) {
+    padding: 15px;
+  }
 `;
 
 // New Section: Workflow Process

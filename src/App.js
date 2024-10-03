@@ -22,6 +22,14 @@ const AppContainer = styled.div`
 const Content = styled.div`
   flex: 1;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px; /* Further reduced padding for mobile devices */
+  }
 `;
 
 const App = () => {

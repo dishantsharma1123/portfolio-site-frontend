@@ -56,7 +56,7 @@ const Nav = styled.nav`
   align-items: center;
 
   @media (max-width: 768px) {
-    display: none;
+    display: none; /* Hide on mobile */
   }
 `;
 
@@ -105,7 +105,7 @@ const HamburgerIcon = styled.div`
   color: ${colors.text};
 
   @media (max-width: 768px) {
-    display: block;
+    display: block; /* Show on mobile */
     cursor: pointer;
   }
 `;
@@ -139,7 +139,7 @@ const Menu = styled.div`
   transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
 
   @media (min-width: 769px) {
-    display: none;
+    display: none; /* Hide on larger screens */
   }
 `;
 

@@ -47,6 +47,9 @@ const HeaderTitle = styled.h1`
   @media (max-width: 768px) {
     font-size: 2rem;
   }
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const HeaderSubtitle = styled.h2`
@@ -55,6 +58,9 @@ const HeaderSubtitle = styled.h2`
   margin: 10px 0 0;
   @media (max-width: 768px) {
     font-size: 1rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -67,6 +73,9 @@ const Description = styled.p`
   @media (max-width: 768px) {
     font-size: 1rem;
     padding: 0 10px;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -161,6 +170,15 @@ const Section = styled.div`
     }
     p {
       font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 0.85rem;
     }
   }
 `;

@@ -40,12 +40,13 @@ const SuccessContainer = styled.div`
   max-width: 400px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-  @media (min-width: 768px) {
-    width: 80%;
+  @media (max-width: 768px) {
+    width: 80%; /* Adjust width for smaller screens */
   }
 
-  @media (min-width: 1024px) {
-    width: 60%;
+  @media (max-width: 480px) {
+    width: 95%; /* Further adjust width for mobile devices */
+    padding: 15px; /* Adjust padding for mobile devices */
   }
 `;
 
@@ -54,6 +55,10 @@ const TickImage = styled.img`
   width: 70px;
   height: auto;
   margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    width: 60px; /* Slightly smaller image on mobile devices */
+  }
 `;
 
 // Text for the success message
@@ -62,6 +67,10 @@ const SuccessMessageText = styled.p`
   color: #4caf50;
   text-align: center;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 1rem; /* Smaller font size for better readability on mobile */
+  }
 `;
 
 // Text for the countdown timer
@@ -70,6 +79,10 @@ const TimerText = styled.p`
   color: #4caf50;
   text-align: center;
   margin-top: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem; /* Adjust font size for mobile devices */
+  }
 `;
 
 // SuccessMessage component
