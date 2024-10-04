@@ -213,13 +213,15 @@ const SectionContent = styled.section`
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center to flex-start */
   }
 
   .project::before {
-    content: "✔";
+    content: "\2714"; /* Correct Unicode for checkmark */
     margin-right: 10px;
     color: #61dafb;
+    flex-shrink: 0; /* Prevent the checkmark from shrinking */
+    font-size: 1.2rem; /* Optional: Adjust size of the checkmark */
   }
 
   a {
@@ -246,6 +248,14 @@ const SectionContent = styled.section`
     }
     p {
       font-size: 0.85rem;
+    }
+
+    .project {
+      font-size: 0.9rem; /* Optional: Adjust project text size */
+    }
+
+    .project::before {
+      font-size: 1rem; /* Optional: Adjust checkmark size */
     }
   }
 `;
