@@ -251,11 +251,11 @@ const SectionContent = styled.section`
     }
 
     .project {
-      font-size: 0.9rem; /* Optional: Adjust project text size */
+      font-size: 0.9rem; /* Adjust project text size */
     }
 
     .project::before {
-      font-size: 1rem; /* Optional: Adjust checkmark size */
+      font-size: 1rem; /* Adjust checkmark size */
     }
   }
 `;
