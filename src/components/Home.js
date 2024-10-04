@@ -1,5 +1,5 @@
 // src/components/Home.js
-import React from "react";
+import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import {
   FaArrowRight,
@@ -8,6 +8,7 @@ import {
   FaCloud,
   FaArrowDown,
 } from "react-icons/fa";
+import Section from "./styled/Section"; // Import the Section component
 
 // Keyframes for animations
 const fadeIn = keyframes`
@@ -23,25 +24,25 @@ const fadeIn = keyframes`
 
 const bounce = keyframes`
   0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
   } 
   40% {
-    transform: translateY(15px) rotate(10deg);
+    transform: translateY(15px);
   } 
   60% {
-    transform: translateY(7px) rotate(-10deg);
+    transform: translateY(7px);
   }
 `;
 
 const rotate = keyframes`
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) translateY(0);
   }
   50% {
-    transform: rotate(10deg);
+    transform: rotate(15deg) translateY(10px);
   }
   100% {
-    transform: rotate(-10deg);
+    transform: rotate(-15deg) translateY(0);
   }
 `;
 
@@ -79,7 +80,7 @@ const HeroSection = styled.section`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 3rem; /* Adjust as needed */
     font-weight: 700;
     animation: ${fadeIn} 2s ease-out forwards;
     opacity: 0;
@@ -99,13 +100,14 @@ const HeroSection = styled.section`
   }
 `;
 
+// Enhanced DownArrow with Gradient and Combined Animations
 const DownArrow = styled(FaArrowDown)`
   position: absolute;
   bottom: 30px; /* Slightly higher for better visibility */
   font-size: 3rem; /* Increased size */
   color: #fff;
   cursor: pointer;
-  animation: ${bounce} 2s infinite, ${rotate} 2s infinite;
+  animation: ${bounce} 2s infinite, ${rotate} 4s infinite;
   z-index: 2;
 
   /* Gradient color using background-clip */
@@ -117,11 +119,11 @@ const DownArrow = styled(FaArrowDown)`
   text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
   /* Enhanced hover effect */
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 
   &:hover {
-    color: #e2e8f0; /* Faint color change */
-    transform: translateY(-5px) scale(1.2); /* Move up slightly and enlarge */
+    transform: translateY(-7px) scale(1.3);
+    opacity: 0.8;
   }
 
   /* Responsiveness */
@@ -134,11 +136,10 @@ const DownArrow = styled(FaArrowDown)`
   }
 `;
 
-const FeaturesSection = styled.section.attrs(() => ({
+// Features Section using Section component
+const FeaturesSection = styled(Section).attrs(() => ({
   id: "features",
 }))`
-  max-width: 1200px;
-  padding: 60px 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -201,9 +202,8 @@ const FeatureCard = styled.div`
   }
 `;
 
-const CTASection = styled.section`
-  width: 100%;
-  padding: 60px 20px;
+// Call to Action Section using Section component
+const CTASection = styled(Section)`
   background: rgba(255, 255, 255, 0.9);
   color: #333;
   display: flex;
@@ -211,6 +211,7 @@ const CTASection = styled.section`
   align-items: center;
   text-align: center;
   position: relative;
+  margin-top: 40px;
 
   h2 {
     font-size: 2rem;
@@ -222,7 +223,7 @@ const CTASection = styled.section`
     padding: 10px 30px;
     border: none;
     border-radius: 5px;
-    background: #2b6cb0;
+    background: #2b6cb0; /* Blue background */
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
@@ -232,7 +233,7 @@ const CTASection = styled.section`
     align-items: center;
 
     &:hover {
-      background: #3182ce;
+      background: #3182ce; /* Blue hover */
       transform: translateY(-3px);
     }
 
@@ -268,11 +269,20 @@ const MapContainer = styled.div`
 
 // Home Component
 const Home = () => {
-  // Scroll handler
+  // Create a ref for the Features section
+  const featuresRef = useRef(null);
+
+  // Scroll handler with offset
   const scrollToFeatures = () => {
-    const features = document.getElementById("features");
-    if (features) {
-      features.scrollIntoView({ behavior: "smooth" });
+    const offset = 70; // Adjust this value as needed for your design
+    if (featuresRef.current) {
+      const elementPosition = featuresRef.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -285,7 +295,7 @@ const Home = () => {
       </HeroSection>
 
       {/* Features Section */}
-      <FeaturesSection>
+      <FeaturesSection ref={featuresRef}>
         <FeatureCard>
           <FaCode />
           <h3>Web Development</h3>

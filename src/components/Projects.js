@@ -2,6 +2,7 @@
 import React from "react";
 import { FaEye, FaGithub } from "react-icons/fa";
 import styled, { keyframes } from "styled-components";
+import Section from "./styled/Section"; // Import the Section component
 
 // Keyframes for animations
 const fadeIn = keyframes`
@@ -17,7 +18,7 @@ const fadeIn = keyframes`
 
 // Container for the Projects section
 const ProjectsContainer = styled.div`
-  padding: 60px 20px;
+  width: 100%;
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   display: flex;
@@ -26,7 +27,7 @@ const ProjectsContainer = styled.div`
   box-sizing: border-box;
 `;
 
-// Section Heading
+// Section Heading using the Section component's styles
 const SectionHeading = styled.h1`
   font-size: 2.5rem;
   text-align: center;
@@ -43,7 +44,7 @@ const SectionHeading = styled.h1`
   }
 `;
 
-// Project Card Container
+// Project Card using styled-components
 const ProjectCard = styled.div`
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -56,7 +57,7 @@ const ProjectCard = styled.div`
   align-items: center;
   width: 100%;
   max-width: 280px;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   opacity: 0;
   animation: ${fadeIn} 0.8s ease forwards;
 
@@ -70,7 +71,7 @@ const ProjectCard = styled.div`
   }
 `;
 
-// Image Container
+// Image Container with placeholder image
 const ImageContainer = styled.div`
   width: 100%;
   height: 150px;
@@ -126,13 +127,12 @@ const IconsContainer = styled.div`
   }
 `;
 
-// New Section: Introduction
+// Introduction Section
 const IntroductionSection = styled.div`
   text-align: center;
   margin-bottom: 40px;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   font-size: 1.1rem;
   line-height: 1.5;
   color: white;
@@ -150,6 +150,7 @@ const TechnologyOverview = styled.div`
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   text-align: center;
+  width: 100%;
 `;
 
 // Technology Grid
@@ -163,12 +164,20 @@ const TechnologyGrid = styled.div`
 // Technology Box
 const TechBox = styled.div`
   background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
+  padding: 15px 25px;
   border-radius: 8px;
   color: white;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+  }
 
   @media (max-width: 480px) {
-    padding: 10px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 `;
 
@@ -179,12 +188,25 @@ const ProcessSection = styled.div`
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   text-align: center;
+  width: 100%;
 `;
 
 // Process Step
 const ProcessStep = styled.div`
   margin-bottom: 15px;
   color: white;
+  font-size: 1rem;
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
+`;
+
+const ProjectsContent = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 `;
 
 const Projects = () => {
@@ -201,20 +223,14 @@ const Projects = () => {
       </IntroductionSection>
 
       {/* Projects Cards */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          flexWrap: "wrap",
-        }}
-      >
+      <ProjectsContent>
         <ProjectCard>
           <ImageContainer />
           <ProjectTitle>Project One</ProjectTitle>
           <Technologies>React, Node.js, MongoDB</Technologies>
           <IconsContainer>
-            <FaEye />
-            <FaGithub />
+            <FaEye title="View Project" />
+            <FaGithub title="View Github" />
           </IconsContainer>
         </ProjectCard>
 
@@ -223,11 +239,13 @@ const Projects = () => {
           <ProjectTitle>Project Two</ProjectTitle>
           <Technologies>Vue, Firebase</Technologies>
           <IconsContainer>
-            <FaEye />
-            <FaGithub />
+            <FaEye title="View Project" />
+            <FaGithub title="View Github" />
           </IconsContainer>
         </ProjectCard>
-      </div>
+
+        {/* Add more ProjectCards as needed */}
+      </ProjectsContent>
 
       {/* Technology Overview Section */}
       <TechnologyOverview>
@@ -237,6 +255,9 @@ const Projects = () => {
           <TechBox>Node.js</TechBox>
           <TechBox>GraphQL</TechBox>
           <TechBox>MongoDB</TechBox>
+          <TechBox>Vue</TechBox>
+          <TechBox>Firebase</TechBox>
+          {/* Add more technologies as needed */}
         </TechnologyGrid>
       </TechnologyOverview>
 

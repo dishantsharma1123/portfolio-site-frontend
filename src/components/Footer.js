@@ -121,7 +121,7 @@ const FooterBottom = styled.div`
 
 // Example navigation links
 const navLinks = [
-  { name: "Home", href: "/" }, // Use relative paths for HashRouter
+  { name: "Home", href: "/" }, // Use relative paths for BrowserRouter
   { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
@@ -129,18 +129,25 @@ const navLinks = [
 
 // Footer component
 const Footer = () => {
+  // Define the scrollToTop function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <FooterContainer>
       <FooterWrapper>
         {/* Branding Section */}
         <Branding>
-          <Logo to="/">My Portfolio</Logo>
+          <Logo to="/" onClick={scrollToTop}>
+            My Portfolio
+          </Logo>
         </Branding>
 
         {/* Navigation Links */}
         <FooterLinks>
           {navLinks.map((link) => (
-            <FooterLink key={link.name} to={link.href}>
+            <FooterLink key={link.name} to={link.href} onClick={scrollToTop}>
               {link.name}
             </FooterLink>
           ))}

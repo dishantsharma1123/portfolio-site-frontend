@@ -1,20 +1,34 @@
 // src/components/About.js
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import Section from "./styled/Section"; // Import the reusable Section component
 
+// Define the fadeIn animation
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+// Container for the entire About page
 const AboutContainer = styled.div`
   width: 100%;
-  padding: 40px 20px;
   background: #f8f9fa;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  padding: 40px 0; /* Vertical padding */
 `;
 
+// Header Section (Hero Section)
 const HeaderContainer = styled.div`
-  width: 100%;
-  max-width: 800px;
+  width: 100%; /* Make it full width */
   height: 400px;
   background-image: url("https://images.unsplash.com/photo-1723561246850-f58894fc3f64?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
@@ -28,8 +42,18 @@ const HeaderContainer = styled.div`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
   position: relative;
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+
+  @media (max-width: 480px) {
+    height: 250px;
+  }
 `;
 
+// Overlay for the Header
 const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -40,53 +64,76 @@ const Overlay = styled.div`
   z-index: 1;
 `;
 
+// Header Title with fadeIn animation
 const HeaderTitle = styled.h1`
   font-size: 2.5rem;
   z-index: 2;
   margin: 0;
+  animation: ${fadeIn} 2s ease-out forwards;
+  opacity: 0;
+
+  /* Responsive font sizes */
   @media (max-width: 768px) {
     font-size: 2rem;
   }
+
   @media (max-width: 480px) {
     font-size: 1.8rem;
   }
 `;
 
+// Header Subtitle with fadeIn animation
 const HeaderSubtitle = styled.h2`
   font-size: 1.2rem;
   z-index: 2;
   margin: 10px 0 0;
+  animation: ${fadeIn} 2s ease-out forwards;
+  animation-delay: 0.5s; /* Delay to stagger animations */
+  opacity: 0;
+
+  /* Responsive font sizes */
   @media (max-width: 768px) {
     font-size: 1rem;
   }
+
   @media (max-width: 480px) {
     font-size: 0.9rem;
   }
 `;
 
+// Description Paragraph
 const Description = styled.p`
   font-size: 1.2rem;
   color: #555;
-  max-width: 800px;
+  max-width: 1200px; /* Align with other sections */
   text-align: center;
   margin: 20px 0;
+
   @media (max-width: 768px) {
     font-size: 1rem;
     padding: 0 10px;
   }
+
   @media (max-width: 480px) {
     font-size: 0.9rem;
   }
 `;
 
-const SkillsSection = styled.div`
+// Skills Section
+const SkillsSection = styled.section`
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1200px;
   margin-top: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
+// Skill Card
 const SkillCard = styled.div`
   background: #ffffff;
   padding: 30px;
@@ -111,6 +158,7 @@ const SkillCard = styled.div`
   }
 `;
 
+// Skill Title
 const SkillTitle = styled.h3`
   font-size: 1.7rem;
   color: #333;
@@ -133,6 +181,7 @@ const SkillTitle = styled.h3`
   }
 `;
 
+// Skill Description
 const SkillDescription = styled.p`
   color: #666;
   font-size: 1rem;
@@ -142,11 +191,13 @@ const SkillDescription = styled.p`
   }
 `;
 
-const Section = styled.div`
+// General Section for other content sections
+const SectionContent = styled.section`
   width: 100%;
   max-width: 800px;
   margin-top: 40px;
   text-align: center;
+  padding: 0 20px; /* Optional padding */
 
   h3 {
     font-size: 1.8rem;
@@ -162,6 +213,15 @@ const Section = styled.div`
     margin: 15px 0;
     color: #3182ce;
     font-weight: bold;
+  }
+
+  a {
+    color: #3182ce;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   @media (max-width: 768px) {
@@ -186,12 +246,14 @@ const Section = styled.div`
 const About = () => {
   return (
     <AboutContainer>
+      {/* Header Section */}
       <HeaderContainer>
         <Overlay />
         <HeaderTitle>About Me</HeaderTitle>
         <HeaderSubtitle>Passionate Software Developer</HeaderSubtitle>
       </HeaderContainer>
 
+      {/* Description */}
       <Description>
         I am a passionate software developer with a strong foundation in
         building efficient and scalable web applications. My journey in tech
@@ -200,6 +262,7 @@ const About = () => {
         applying them to real-world projects.
       </Description>
 
+      {/* Skills Section */}
       <SkillsSection>
         <SkillCard>
           <SkillTitle>Web Development</SkillTitle>
@@ -230,7 +293,8 @@ const About = () => {
         </SkillCard>
       </SkillsSection>
 
-      <Section>
+      {/* Experience Section */}
+      <SectionContent>
         <h3>My Experience</h3>
         <p>
           Over the past few years, I have worked on various projects, ranging
@@ -239,32 +303,35 @@ const About = () => {
           methodologies. I am committed to delivering high-quality solutions
           that meet client needs and exceed expectations.
         </p>
-      </Section>
+      </SectionContent>
 
-      <Section>
+      {/* Projects Section */}
+      <SectionContent>
         <h3>Projects</h3>
         <p>Here are some of my notable projects:</p>
         <div className="project">✔ Project 1: E-commerce Website</div>
         <div className="project">✔ Project 2: Social Media App</div>
         <div className="project">✔ Project 3: Task Management Tool</div>
-      </Section>
+      </SectionContent>
 
-      <Section>
+      {/* Education Section */}
+      <SectionContent>
         <h3>Education</h3>
         <p>
           Bachelor of Science in Computer Science <br />
           XYZ University, 2018 - 2022
         </p>
-      </Section>
+      </SectionContent>
 
-      <Section>
+      {/* Contact Section */}
+      <SectionContent>
         <h3>Contact Me</h3>
         <p>
           Feel free to reach out for collaborations or job opportunities! You
           can email me at:
           <a href="mailto:your-email@example.com"> your-email@example.com</a>
         </p>
-      </Section>
+      </SectionContent>
     </AboutContainer>
   );
 };

@@ -1,7 +1,7 @@
 // src/components/Header.js
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 // Define a color palette for consistency
@@ -14,6 +14,7 @@ const colors = {
   mutedText: "#D1D5DB", // Light Gray for less prominent text
 };
 
+// Styled Components Definitions
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
@@ -167,6 +168,7 @@ const CloseButton = styled.div`
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -180,6 +182,10 @@ const Header = () => {
     ) {
       setIsOpen(false);
     }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -199,12 +205,22 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Logo to="/">My Portfolio</Logo>
+        <Logo to="/" onClick={scrollToTop}>
+          My Portfolio
+        </Logo>
         <Nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/" onClick={scrollToTop}>
+            Home
+          </NavLink>
+          <NavLink to="/about" onClick={scrollToTop}>
+            About
+          </NavLink>
+          <NavLink to="/projects" onClick={scrollToTop}>
+            Projects
+          </NavLink>
+          <NavLink to="/contact" onClick={scrollToTop}>
+            Contact
+          </NavLink>
         </Nav>
         <HamburgerIcon onClick={toggleMenu} id="hamburger-icon">
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -215,16 +231,40 @@ const Header = () => {
         <CloseButton onClick={toggleMenu}>
           <FaTimes size={24} />
         </CloseButton>
-        <MenuItem to="/" onClick={() => setIsOpen(false)}>
+        <MenuItem
+          to="/"
+          onClick={() => {
+            scrollToTop();
+            setIsOpen(false);
+          }}
+        >
           Home
         </MenuItem>
-        <MenuItem to="/about" onClick={() => setIsOpen(false)}>
+        <MenuItem
+          to="/about"
+          onClick={() => {
+            scrollToTop();
+            setIsOpen(false);
+          }}
+        >
           About
         </MenuItem>
-        <MenuItem to="/projects" onClick={() => setIsOpen(false)}>
+        <MenuItem
+          to="/projects"
+          onClick={() => {
+            scrollToTop();
+            setIsOpen(false);
+          }}
+        >
           Projects
         </MenuItem>
-        <MenuItem to="/contact" onClick={() => setIsOpen(false)}>
+        <MenuItem
+          to="/contact"
+          onClick={() => {
+            scrollToTop();
+            setIsOpen(false);
+          }}
+        >
           Contact
         </MenuItem>
       </Menu>

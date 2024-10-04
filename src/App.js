@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import GlobalStyles from "./GlobalStyles";
 import MainContent from "./components/MainContent";
+import ScrollToTop from "./components/ScrollToTop";
+import ScrollButton from "./components/styled/ScrollButton";
 
 // Container for the entire application, ensuring it takes the full viewport height
 const AppContainer = styled.div`
@@ -43,6 +45,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <GlobalStyles />
       <AppContainer>
         <Header />
@@ -56,6 +59,7 @@ const App = () => {
             </Routes>
           </Content>
         </MainContent>
+        <ScrollButton />
         <Footer />
       </AppContainer>
     </Router>
