@@ -208,11 +208,10 @@ const SectionContent = styled.section`
   }
 
   .projectdiv {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; // Added margin to the top of projectdiv
+    margin-top: 20px;
   }
 
   .project {
@@ -222,9 +221,9 @@ const SectionContent = styled.section`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    text-align: left;
     width: 100%;
     max-width: 300px;
+    text-align: left;
   }
 
   .project::before {
@@ -250,9 +249,7 @@ const SectionContent = styled.section`
     h3 {
       font-size: 1.5rem;
     }
-    p {
-      font-size: 0.9rem;
-    }
+    p,
     .project {
       font-size: 0.9rem;
     }
@@ -262,11 +259,13 @@ const SectionContent = styled.section`
     h3 {
       font-size: 1.3rem;
     }
-    p {
-      font-size: 0.85rem;
-    }
+    p,
     .project {
       font-size: 0.85rem;
+    }
+    .projectdiv {
+      align-items: flex-start;
+      padding-left: calc(50% - 150px);
     }
   }
 `;
