@@ -17,93 +17,92 @@ const fadeIn = keyframes`
 
 // Container for the Projects section
 const ProjectsContainer = styled.div`
-  padding: 100px 20px;
-  background: linear-gradient(
-    135deg,
-    #2c3e50 0%,
-    #34495e 100%
-  ); /* Gradient background */
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 `;
 
 // Section Heading
 const SectionHeading = styled.h1`
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 2rem;
-  color: #61dafb; /* Header color */
+  margin-bottom: 1.5rem;
+  color: #61dafb;
   animation: ${fadeIn} 1s ease forwards;
 
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 `;
 
 // Project Card Container
 const ProjectCard = styled.div`
-  background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 20px;
-  margin: 20px; /* Margin for spacing between cards */
+  margin: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 300px; /* Use max-width for better responsiveness */
-  height: 450px; /* Increased height for the image */
-  transition: box-shadow 0.3s ease; /* Removed transform to avoid floating effect */
-  opacity: 0; /* Start invisible */
-  animation: ${fadeIn} 0.8s ease forwards; /* Animation for fade-in */
+  max-width: 280px;
+  transition: box-shadow 0.3s ease;
+  opacity: 0;
+  animation: ${fadeIn} 0.8s ease forwards;
 
   &:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Keep hover shadow effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   }
 
   @media (max-width: 480px) {
     max-width: 100%;
-    margin: 10px 0; /* Adjust margin for smaller screens */
+    margin: 10px 0;
   }
 `;
 
 // Image Container
 const ImageContainer = styled.div`
   width: 100%;
-  height: 150px; /* Set height for the image */
+  height: 150px;
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("https://via.placeholder.com/300x150") center/cover no-repeat; /* Placeholder image */
+  background: url("https://via.placeholder.com/300x150") center/cover no-repeat;
 `;
 
 // Project Title
 const ProjectTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: white;
   margin-bottom: 10px;
 
   @media (max-width: 480px) {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 `;
 
 // Technologies List
 const Technologies = styled.p`
-  font-size: 0.9rem;
-  color: #dcdcdc; /* Lighter gray for better contrast */
-  margin-bottom: 30px;
+  font-size: 0.85rem;
+  color: #dcdcdc;
+  margin-bottom: 20px;
   text-align: center;
 
   @media (max-width: 480px) {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 `;
 
@@ -115,14 +114,14 @@ const IconsContainer = styled.div`
   margin-top: auto;
 
   svg {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: white;
-    margin: 0 10px; /* Reduced margin for closer spacing */
+    margin: 0 8px;
     transition: color 0.3s ease;
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer;
 
     &:hover {
-      color: #61dafb; /* Light blue on hover */
+      color: #61dafb;
     }
   }
 `;
@@ -130,25 +129,25 @@ const IconsContainer = styled.div`
 // New Section: Introduction
 const IntroductionSection = styled.div`
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   color: white;
   animation: ${fadeIn} 1s ease forwards;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 `;
 
-// New Section: Technology Overview
+// Technology Overview Section
 const TechnologyOverview = styled.div`
-  margin: 50px 0;
-  padding: 50px 20px;
-  background: rgba(0, 0, 0, 0.6); /* Darker background for contrast */
+  margin: 40px 0;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   text-align: center;
 `;
@@ -158,25 +157,25 @@ const TechnologyGrid = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
 `;
 
 // Technology Box
 const TechBox = styled.div`
   background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   color: white;
 
   @media (max-width: 480px) {
-    padding: 15px;
+    padding: 10px;
   }
 `;
 
-// New Section: Workflow Process
+// Workflow Process Section
 const ProcessSection = styled.div`
-  margin: 50px 0;
-  padding: 50px 20px;
+  margin: 40px 0;
+  padding: 40px 20px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   text-align: center;
@@ -184,8 +183,8 @@ const ProcessSection = styled.div`
 
 // Process Step
 const ProcessStep = styled.div`
-  margin-bottom: 20px;
-  color: white; /* Ensure text color is visible */
+  margin-bottom: 15px;
+  color: white;
 `;
 
 const Projects = () => {
