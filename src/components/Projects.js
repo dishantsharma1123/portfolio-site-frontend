@@ -19,12 +19,30 @@ const fadeIn = keyframes`
 // Container for the Projects section
 const ProjectsContainer = styled.div`
   width: 100%;
+  min-height: 100vh;
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  padding: 20px 0;
+`;
+
+// Content Wrapper
+const ContentWrapper = styled.div`
+  width: 90%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 10px;
+  }
 `;
 
 // Section Heading using the Section component's styles
@@ -36,7 +54,7 @@ const SectionHeading = styled.h1`
   animation: ${fadeIn} 1s ease forwards;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   @media (max-width: 480px) {
@@ -56,13 +74,18 @@ const ProjectCard = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 280px;
+  max-width: 300px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   opacity: 0;
   animation: ${fadeIn} 0.8s ease forwards;
 
   &:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 768px) {
+    max-width: 45%;
   }
 
   @media (max-width: 480px) {
@@ -82,6 +105,14 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: url("https://via.placeholder.com/300x150") center/cover no-repeat;
+
+  @media (max-width: 768px) {
+    height: 140px;
+  }
+
+  @media (max-width: 480px) {
+    height: 130px;
+  }
 `;
 
 // Project Title
@@ -155,10 +186,15 @@ const TechnologyOverview = styled.div`
 
 // Technology Grid
 const TechnologyGrid = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 15px;
+  width: 100%;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+  }
 `;
 
 // Technology Box
@@ -206,69 +242,82 @@ const ProjectsContent = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 15px;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 `;
 
 const Projects = () => {
   return (
     <ProjectsContainer>
-      {/* Projects Section Heading */}
-      <SectionHeading>My Portfolio</SectionHeading>
+      <ContentWrapper>
+        {/* Projects Section Heading */}
+        <SectionHeading>My Portfolio</SectionHeading>
 
-      {/* Introduction Section */}
-      <IntroductionSection>
-        I have worked on several web applications, utilizing a variety of modern
-        technologies. My portfolio showcases these projects, which emphasize
-        clean, performant code and responsive design.
-      </IntroductionSection>
+        {/* Introduction Section */}
+        <IntroductionSection>
+          I have worked on several web applications, utilizing a variety of
+          modern technologies. My portfolio showcases these projects, which
+          emphasize clean, performant code and responsive design.
+        </IntroductionSection>
 
-      {/* Projects Cards */}
-      <ProjectsContent>
-        <ProjectCard>
-          <ImageContainer />
-          <ProjectTitle>Project One</ProjectTitle>
-          <Technologies>React, Node.js, MongoDB</Technologies>
-          <IconsContainer>
-            <FaEye title="View Project" />
-            <FaGithub title="View Github" />
-          </IconsContainer>
-        </ProjectCard>
+        {/* Projects Cards */}
+        <ProjectsContent>
+          <ProjectCard>
+            <ImageContainer />
+            <ProjectTitle>Project One</ProjectTitle>
+            <Technologies>React, Node.js, MongoDB</Technologies>
+            <IconsContainer>
+              <FaEye title="View Project" />
+              <FaGithub title="View Github" />
+            </IconsContainer>
+          </ProjectCard>
 
-        <ProjectCard>
-          <ImageContainer />
-          <ProjectTitle>Project Two</ProjectTitle>
-          <Technologies>Vue, Firebase</Technologies>
-          <IconsContainer>
-            <FaEye title="View Project" />
-            <FaGithub title="View Github" />
-          </IconsContainer>
-        </ProjectCard>
+          <ProjectCard>
+            <ImageContainer />
+            <ProjectTitle>Project Two</ProjectTitle>
+            <Technologies>Vue, Firebase</Technologies>
+            <IconsContainer>
+              <FaEye title="View Project" />
+              <FaGithub title="View Github" />
+            </IconsContainer>
+          </ProjectCard>
 
-        {/* Add more ProjectCards as needed */}
-      </ProjectsContent>
+          {/* Add more ProjectCards as needed */}
+        </ProjectsContent>
 
-      {/* Technology Overview Section */}
-      <TechnologyOverview>
-        <SectionHeading>Technologies I Use</SectionHeading>
-        <TechnologyGrid>
-          <TechBox>React</TechBox>
-          <TechBox>Node.js</TechBox>
-          <TechBox>GraphQL</TechBox>
-          <TechBox>MongoDB</TechBox>
-          <TechBox>Vue</TechBox>
-          <TechBox>Firebase</TechBox>
-          {/* Add more technologies as needed */}
-        </TechnologyGrid>
-      </TechnologyOverview>
+        {/* Technology Overview Section */}
+        <TechnologyOverview>
+          <SectionHeading>Technologies I Use</SectionHeading>
+          <TechnologyGrid>
+            <TechBox>React</TechBox>
+            <TechBox>Node.js</TechBox>
+            <TechBox>GraphQL</TechBox>
+            <TechBox>MongoDB</TechBox>
+            <TechBox>Vue</TechBox>
+            <TechBox>Firebase</TechBox>
+            {/* Add more technologies as needed */}
+          </TechnologyGrid>
+        </TechnologyOverview>
 
-      {/* Workflow Process Section */}
-      <ProcessSection>
-        <SectionHeading>My Development Process</SectionHeading>
-        <ProcessStep>1. Research & Discovery</ProcessStep>
-        <ProcessStep>2. Design & Planning</ProcessStep>
-        <ProcessStep>3. Development & Testing</ProcessStep>
-        <ProcessStep>4. Deployment & Monitoring</ProcessStep>
-      </ProcessSection>
+        {/* Workflow Process Section */}
+        <ProcessSection>
+          <SectionHeading>My Development Process</SectionHeading>
+          <ProcessStep>1. Research & Discovery</ProcessStep>
+          <ProcessStep>2. Design & Planning</ProcessStep>
+          <ProcessStep>3. Development & Testing</ProcessStep>
+          <ProcessStep>4. Deployment & Monitoring</ProcessStep>
+        </ProcessSection>
+      </ContentWrapper>
     </ProjectsContainer>
   );
 };

@@ -1,7 +1,6 @@
 // src/components/About.js
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import Section from "./styled/Section"; // Import the reusable Section component
 
 // Define the fadeIn animation
 const fadeIn = keyframes`
@@ -23,12 +22,12 @@ const AboutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  padding: 40px 0; /* Vertical padding */
+  padding: 40px 20px; /* Added horizontal padding for better spacing on small screens */
 `;
 
 // Header Section (Hero Section)
 const HeaderContainer = styled.div`
-  width: 100%; /* Make it full width */
+  width: 100%; /* Full width */
   height: 400px;
   background-image: url("https://images.unsplash.com/photo-1723561246850-f58894fc3f64?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
@@ -126,11 +125,6 @@ const SkillsSection = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 // Skill Card
@@ -140,7 +134,8 @@ const SkillCard = styled.div`
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   margin: 15px;
-  width: calc(33.33% - 30px);
+  flex: 1 1 calc(33.33% - 30px); /* Flex properties for responsive sizing */
+  max-width: 300px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -149,12 +144,13 @@ const SkillCard = styled.div`
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 
-  @media (max-width: 768px) {
-    width: 80%;
+  @media (max-width: 992px) {
+    flex: 1 1 calc(50% - 30px); /* Two cards per row on medium screens */
   }
 
-  @media (max-width: 480px) {
-    width: 100%;
+  @media (max-width: 600px) {
+    flex: 1 1 100%; /* One card per row on small screens */
+    max-width: 100%;
   }
 `;
 
@@ -202,17 +198,28 @@ const SectionContent = styled.section`
   h3 {
     font-size: 1.8rem;
     color: #333;
+    margin-bottom: 20px;
   }
 
   p {
     font-size: 1rem;
     color: #555;
+    line-height: 1.6;
   }
 
   .project {
     margin: 15px 0;
     color: #3182ce;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project::before {
+    content: "✔";
+    margin-right: 10px;
+    color: #61dafb;
   }
 
   a {
@@ -309,9 +316,9 @@ const About = () => {
       <SectionContent>
         <h3>Projects</h3>
         <p>Here are some of my notable projects:</p>
-        <div className="project">✔ Project 1: E-commerce Website</div>
-        <div className="project">✔ Project 2: Social Media App</div>
-        <div className="project">✔ Project 3: Task Management Tool</div>
+        <div className="project">Project 1: E-commerce Website</div>
+        <div className="project">Project 2: Social Media App</div>
+        <div className="project">Project 3: Task Management Tool</div>
       </SectionContent>
 
       {/* Education Section */}
