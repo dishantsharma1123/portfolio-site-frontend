@@ -193,7 +193,7 @@ const SectionContent = styled.section`
   max-width: 800px;
   margin-top: 40px;
   text-align: center;
-  padding: 0 20px; /* Optional padding */
+  padding: 0 20px;
 
   h3 {
     font-size: 1.8rem;
@@ -207,21 +207,34 @@ const SectionContent = styled.section`
     line-height: 1.6;
   }
 
+  .projectdiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; // Added margin to the top of projectdiv
+  }
+
   .project {
-    margin: 15px 0;
+    margin: 10px 0;
     color: #3182ce;
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Changed from center to flex-start */
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
   }
 
   .project::before {
-    content: "\2714"; /* Correct Unicode for checkmark */
+    content: "✓";
     margin-right: 10px;
     color: #61dafb;
-    flex-shrink: 0; /* Prevent the checkmark from shrinking */
-    font-size: 1.2rem; /* Optional: Adjust size of the checkmark */
+    flex-shrink: 0;
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   a {
@@ -240,6 +253,9 @@ const SectionContent = styled.section`
     p {
       font-size: 0.9rem;
     }
+    .project {
+      font-size: 0.9rem;
+    }
   }
 
   @media (max-width: 480px) {
@@ -249,13 +265,8 @@ const SectionContent = styled.section`
     p {
       font-size: 0.85rem;
     }
-
     .project {
-      font-size: 0.9rem; /* Adjust project text size */
-    }
-
-    .project::before {
-      font-size: 1rem; /* Adjust checkmark size */
+      font-size: 0.85rem;
     }
   }
 `;
@@ -326,9 +337,11 @@ const About = () => {
       <SectionContent>
         <h3>Projects</h3>
         <p>Here are some of my notable projects:</p>
-        <div className="project">Project 1: E-commerce Website</div>
-        <div className="project">Project 2: Social Media App</div>
-        <div className="project">Project 3: Task Management Tool</div>
+        <div className="projectdiv">
+          <div className="project">Project 1: E-commerce Website</div>
+          <div className="project">Project 2: Social Media App</div>
+          <div className="project">Project 3: Task Management Tool</div>
+        </div>
       </SectionContent>
 
       {/* Education Section */}
